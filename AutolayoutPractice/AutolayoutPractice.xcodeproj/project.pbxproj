@@ -14,6 +14,8 @@
 		250A70702366E05B0089568B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250A706E2366E05B0089568B /* LaunchScreen.storyboard */; };
 		250A707B2366E05B0089568B /* AutolayoutPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A707A2366E05B0089568B /* AutolayoutPracticeTests.swift */; };
 		250A70862366E05B0089568B /* AutolayoutPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A70852366E05B0089568B /* AutolayoutPracticeUITests.swift */; };
+		250A928D2366EE53008431A8 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 250A928C2366EE53008431A8 /* Assets */; };
+		250A92912366F28E008431A8 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A92902366F28E008431A8 /* CustomUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		250A70812366E05B0089568B /* AutolayoutPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutolayoutPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		250A70852366E05B0089568B /* AutolayoutPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutPracticeUITests.swift; sourceTree = "<group>"; };
 		250A70872366E05B0089568B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		250A928C2366EE53008431A8 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		250A92902366F28E008431A8 /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +101,12 @@
 		250A70642366E05A0089568B /* AutolayoutPractice */ = {
 			isa = PBXGroup;
 			children = (
-				250A70932366E0770089568B /* Supporting Files */,
+				250A928C2366EE53008431A8 /* Assets */,
 				250A70672366E05A0089568B /* ViewController.swift */,
 				250A70692366E05A0089568B /* Main.storyboard */,
 				250A70712366E05B0089568B /* Info.plist */,
+				250A92902366F28E008431A8 /* CustomUIView.swift */,
+				250A70932366E0770089568B /* Supporting Files */,
 			);
 			path = AutolayoutPractice;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				250A70702366E05B0089568B /* LaunchScreen.storyboard in Resources */,
+				250A928D2366EE53008431A8 /* Assets in Resources */,
 				250A706D2366E05B0089568B /* Assets.xcassets in Resources */,
 				250A706B2366E05A0089568B /* Main.storyboard in Resources */,
 			);
@@ -265,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				250A70682366E05A0089568B /* ViewController.swift in Sources */,
+				250A92912366F28E008431A8 /* CustomUIView.swift in Sources */,
 				250A70662366E05A0089568B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
