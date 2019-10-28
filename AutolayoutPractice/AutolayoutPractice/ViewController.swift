@@ -17,6 +17,26 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet weak var iconeImageView: UIImageView!
+    @IBOutlet weak var carbsAbove300Label: UILabel!
+    @IBOutlet weak var carbsAmountTextField: UITextField!
+    
+    @IBAction func carbsInputChanged(_ sender: UITextField) {
+        //convert string to number
+        if let carbs = Int(sender.text ?? "") {
+            //alert if exceed 300
+            if carbs > 300 {
+                self.carbsAbove300Label.isHidden = false
+            }
+            else {
+                self.carbsAbove300Label.isHidden = true
+            }
+        }
+        else {
+            self.carbsAbove300Label.isHidden = true
+        }
+    }
+
+    
     
 }
 

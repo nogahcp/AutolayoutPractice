@@ -41,11 +41,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="me0-mK-idP" customClass="CustomUIView" customModule="AutolayoutPractice" customModuleProvider="target">
                                         <rect key="frame" x="103.5" y="95" width="123" height="51"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="392 g" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="gZ4-ND-rxg">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="gZ4-ND-rxg">
                                                 <rect key="frame" x="0.0" y="0.0" width="123" height="51"/>
                                                 <color key="textColor" red="0.46274509803921571" green="0.47450980392156861" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="carbsAmountChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="wzB-sP-oh6"/>
+                                                    <action selector="carbsInputChanged:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="am9-rE-HCU"/>
+                                                    <action selector="carbsInputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="xRe-4E-Dip"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.97647058823529409" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,12 +76,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Amount of carbs cannot exceed 300" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-Gk-cmh">
-                                        <rect key="frame" x="49.5" y="159" width="231" height="20"/>
-                                        <color key="textColor" red="0.74901960784313726" green="0.0" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label hidden="YES" opaque="NO" contentMode="scaleToFill" text="Amount of carbs cannot exceed 300" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-Gk-cmh">
+                                        <rect key="frame" x="51.5" y="159" width="227" height="20"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <color key="textColor" red="0.74901960784313726" green="0.0" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3O-tJ-u9D">
                                         <rect key="frame" x="90" y="210" width="150" height="34"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
@@ -167,6 +171,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="carbsAbove300Label" destination="z3F-Gk-cmh" id="S7p-ic-6mR"/>
+                        <outlet property="carbsAmountTextField" destination="gZ4-ND-rxg" id="xAP-t9-F3v"/>
                         <outlet property="iconeImageView" destination="XWt-1F-NT7" id="Gq6-Gg-nL0"/>
                     </connections>
                 </viewController>
