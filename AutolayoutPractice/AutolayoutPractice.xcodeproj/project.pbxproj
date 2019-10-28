@@ -97,11 +97,9 @@
 		250A70642366E05A0089568B /* AutolayoutPractice */ = {
 			isa = PBXGroup;
 			children = (
-				250A70652366E05A0089568B /* AppDelegate.swift */,
+				250A70932366E0770089568B /* Supporting Files */,
 				250A70672366E05A0089568B /* ViewController.swift */,
 				250A70692366E05A0089568B /* Main.storyboard */,
-				250A706C2366E05B0089568B /* Assets.xcassets */,
-				250A706E2366E05B0089568B /* LaunchScreen.storyboard */,
 				250A70712366E05B0089568B /* Info.plist */,
 			);
 			path = AutolayoutPractice;
@@ -123,6 +121,16 @@
 				250A70872366E05B0089568B /* Info.plist */,
 			);
 			path = AutolayoutPracticeUITests;
+			sourceTree = "<group>";
+		};
+		250A70932366E0770089568B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				250A70652366E05A0089568B /* AppDelegate.swift */,
+				250A706C2366E05B0089568B /* Assets.xcassets */,
+				250A706E2366E05B0089568B /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
