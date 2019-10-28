@@ -49,4 +49,10 @@ class CustomUIView: UIView {
             self.layer.borderWidth = borderWidth
         }
     }
+    //TODO
+    @IBInspectable var dashedBorder: Bool = false {
+        didSet {
+            
+        }
+    }
 }

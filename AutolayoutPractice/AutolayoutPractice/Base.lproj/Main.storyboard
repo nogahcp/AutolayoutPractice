@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U2k-es-t9F">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,7 +34,7 @@
                                 <rect key="frame" x="42" y="176" width="330" height="255"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter amount of carbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0I-uA-IMp">
-                                        <rect key="frame" x="52.5" y="49" width="225" height="31"/>
+                                        <rect key="frame" x="52.5" y="49" width="225" height="30.5"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
                                         <color key="textColor" red="0.11764705882352941" green="0.13333333333333333" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -41,28 +42,41 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="me0-mK-idP" customClass="CustomUIView" customModule="AutolayoutPractice" customModuleProvider="target">
                                         <rect key="frame" x="103.5" y="95" width="123" height="51"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="gZ4-ND-rxg">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0n2-2L-QGN">
                                                 <rect key="frame" x="0.0" y="0.0" width="123" height="51"/>
-                                                <color key="textColor" red="0.46274509803921571" green="0.47450980392156861" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="28"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="carbsAmountChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="wzB-sP-oh6"/>
-                                                    <action selector="carbsInputChanged:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="am9-rE-HCU"/>
-                                                    <action selector="carbsInputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="xRe-4E-Dip"/>
-                                                </connections>
-                                            </textField>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="gZ4-ND-rxg">
+                                                        <rect key="frame" x="0.0" y="6" width="90" height="39"/>
+                                                        <color key="textColor" red="0.46274509803921571" green="0.47450980392156861" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="28"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="carbsAmountChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="wzB-sP-oh6"/>
+                                                            <action selector="carbsInputChanged:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="am9-rE-HCU"/>
+                                                            <action selector="carbsInputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="xRe-4E-Dip"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" text=" g" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="28" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USt-Os-STv">
+                                                        <rect key="frame" x="98" y="6.5" width="25" height="38.5"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="28"/>
+                                                        <color key="textColor" red="0.46274509800000002" green="0.47450980390000003" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="carbsAmountChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="sRN-uN-4y6"/>
+                                                            <action selector="carbsInputChanged:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="ehv-vm-xVX"/>
+                                                            <action selector="carbsInputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="vct-bw-9T4"/>
+                                                        </connections>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.97647058823529409" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="122.90000000000001" id="2Fy-Da-yFR"/>
-                                            <constraint firstItem="gZ4-ND-rxg" firstAttribute="centerY" secondItem="me0-mK-idP" secondAttribute="centerY" id="ATl-52-tWR"/>
-                                            <constraint firstAttribute="bottom" secondItem="gZ4-ND-rxg" secondAttribute="bottom" id="AgG-qZ-6Hi"/>
-                                            <constraint firstItem="gZ4-ND-rxg" firstAttribute="leading" secondItem="me0-mK-idP" secondAttribute="leading" id="Kx1-RP-6Jb"/>
-                                            <constraint firstItem="gZ4-ND-rxg" firstAttribute="top" secondItem="me0-mK-idP" secondAttribute="top" id="VVY-KN-Yde"/>
+                                            <constraint firstAttribute="trailing" secondItem="0n2-2L-QGN" secondAttribute="trailing" id="BmW-i5-gcP"/>
+                                            <constraint firstItem="0n2-2L-QGN" firstAttribute="top" secondItem="me0-mK-idP" secondAttribute="top" id="Hvw-hy-lYO"/>
+                                            <constraint firstAttribute="bottom" secondItem="0n2-2L-QGN" secondAttribute="bottom" id="Tjg-Q5-ZS9"/>
+                                            <constraint firstItem="0n2-2L-QGN" firstAttribute="leading" secondItem="me0-mK-idP" secondAttribute="leading" id="Xh9-LJ-Wcn"/>
                                             <constraint firstAttribute="height" constant="51" id="fqB-eb-66F"/>
-                                            <constraint firstAttribute="trailing" secondItem="gZ4-ND-rxg" secondAttribute="trailing" id="h5m-5p-4Nh"/>
-                                            <constraint firstItem="gZ4-ND-rxg" firstAttribute="centerX" secondItem="me0-mK-idP" secondAttribute="centerX" id="m7R-4D-lZV"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -77,7 +91,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label hidden="YES" opaque="NO" contentMode="scaleToFill" text="Amount of carbs cannot exceed 300" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-Gk-cmh">
-                                        <rect key="frame" x="51.5" y="159" width="227" height="20"/>
+                                        <rect key="frame" x="51.5" y="159" width="227" height="19.5"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                         <color key="textColor" red="0.74901960784313726" green="0.0" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
@@ -88,6 +102,21 @@
                                             <color key="titleColor" red="0.46274509803921571" green="0.47450980392156861" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZs-LE-8cE" customClass="CustomUIView" customModule="AutolayoutPractice" customModuleProvider="target">
+                                        <rect key="frame" x="24" y="191" width="282" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="9OI-wO-E7U"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.90980392156862744" green="0.90196078431372551" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -95,11 +124,14 @@
                                     <constraint firstItem="s0I-uA-IMp" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="Beq-S2-tJB"/>
                                     <constraint firstItem="U3O-tJ-u9D" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="JRh-Jk-xvP"/>
                                     <constraint firstAttribute="width" secondItem="rJA-Fk-79E" secondAttribute="height" multiplier="22:17" id="Mfj-d1-Du7"/>
-                                    <constraint firstItem="gZ4-ND-rxg" firstAttribute="top" secondItem="rJA-Fk-79E" secondAttribute="top" constant="95" id="QsQ-en-3EW"/>
+                                    <constraint firstItem="z3F-Gk-cmh" firstAttribute="top" secondItem="me0-mK-idP" secondAttribute="bottom" constant="13" id="V7I-2T-L6t"/>
                                     <constraint firstItem="me0-mK-idP" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="a8Z-hT-3F2"/>
                                     <constraint firstItem="s0I-uA-IMp" firstAttribute="top" secondItem="rJA-Fk-79E" secondAttribute="top" constant="49" id="bpV-FL-3Cz"/>
+                                    <constraint firstItem="jZs-LE-8cE" firstAttribute="leading" secondItem="rJA-Fk-79E" secondAttribute="leading" constant="24" id="d3N-M2-Exc"/>
                                     <constraint firstItem="z3F-Gk-cmh" firstAttribute="top" secondItem="rJA-Fk-79E" secondAttribute="top" constant="159" id="dPa-0J-ayY"/>
+                                    <constraint firstItem="jZs-LE-8cE" firstAttribute="top" secondItem="rJA-Fk-79E" secondAttribute="top" constant="191" id="swj-KP-Gu6"/>
                                     <constraint firstItem="U3O-tJ-u9D" firstAttribute="top" secondItem="rJA-Fk-79E" secondAttribute="top" constant="210" id="uhp-52-sjz"/>
+                                    <constraint firstItem="jZs-LE-8cE" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="w4Y-Gu-9lO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -127,7 +159,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDS-kC-Qp9">
-                                <rect key="frame" x="23" y="605" width="368" height="52"/>
+                                <rect key="frame" x="23" y="735" width="368" height="52"/>
                                 <color key="backgroundColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="8eO-D7-NTT"/>
@@ -143,7 +175,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ix1-QP-2JA">
-                                <rect key="frame" x="185.5" y="674" width="43" height="30"/>
+                                <rect key="frame" x="185.5" y="804" width="43" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="o75-Gm-5xP"/>
@@ -164,7 +196,7 @@
                             <constraint firstItem="ix1-QP-2JA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eAz-E3-OZ6"/>
                             <constraint firstItem="XWt-1F-NT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="176" id="ewR-U1-oJ2"/>
                             <constraint firstItem="rJA-Fk-79E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g09-5Y-otq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ix1-QP-2JA" secondAttribute="bottom" constant="158" id="lRS-wV-Acy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ix1-QP-2JA" secondAttribute="bottom" constant="28" id="lRS-wV-Acy"/>
                             <constraint firstItem="XWt-1F-NT7" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="tA0-89-0d6"/>
                             <constraint firstItem="kDS-kC-Qp9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="ybI-3B-5ZD"/>
                         </constraints>
@@ -179,6 +211,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+        </scene>
+        <!--Log Meal View Controller-->
+        <scene sceneID="kIh-cF-jJ3">
+            <objects>
+                <viewController id="U2k-es-t9F" customClass="LogMealViewController" customModule="AutolayoutPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uVr-g5-7iI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-4t-RJG">
+                                <rect key="frame" x="18" y="134" width="378" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.96862745098039216" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string></string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fXO-4F-doX">
+                                <rect key="frame" x="340" y="134" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fXO-4F-doX" secondAttribute="height" multiplier="1:1" id="URT-6V-aiX"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lqg-Jf-nch">
+                                <rect key="frame" x="18" y="206" width="378" height="656"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XQ3-yg-Bke">
+                                        <rect key="frame" x="0.0" y="28" width="378" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XQ3-yg-Bke" id="Eux-FS-bAe" customClass="LogMealTableViewCell" customModule="AutolayoutPractice" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="378" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2j6-4t-RJG" firstAttribute="centerX" secondItem="uVr-g5-7iI" secondAttribute="centerX" id="7T9-Ej-2dL"/>
+                            <constraint firstItem="nVX-E1-oL9" firstAttribute="trailing" secondItem="2j6-4t-RJG" secondAttribute="trailing" constant="18" id="A8r-RD-mIp"/>
+                            <constraint firstItem="2j6-4t-RJG" firstAttribute="trailing" secondItem="fXO-4F-doX" secondAttribute="trailing" id="KO1-mx-gtl"/>
+                            <constraint firstItem="2j6-4t-RJG" firstAttribute="top" secondItem="nVX-E1-oL9" secondAttribute="top" constant="90" id="RjB-pR-El9"/>
+                            <constraint firstItem="Lqg-Jf-nch" firstAttribute="centerX" secondItem="uVr-g5-7iI" secondAttribute="centerX" id="S9D-ob-Hwp"/>
+                            <constraint firstItem="nVX-E1-oL9" firstAttribute="bottom" secondItem="Lqg-Jf-nch" secondAttribute="bottom" id="m0H-HK-xKu"/>
+                            <constraint firstItem="fXO-4F-doX" firstAttribute="bottom" secondItem="2j6-4t-RJG" secondAttribute="bottom" id="mW6-hE-YEw"/>
+                            <constraint firstItem="Lqg-Jf-nch" firstAttribute="top" secondItem="2j6-4t-RJG" secondAttribute="bottom" constant="16" id="syE-Bc-ap9"/>
+                            <constraint firstItem="fXO-4F-doX" firstAttribute="top" secondItem="2j6-4t-RJG" secondAttribute="top" id="v9I-O8-ODU"/>
+                            <constraint firstItem="Lqg-Jf-nch" firstAttribute="width" secondItem="2j6-4t-RJG" secondAttribute="width" id="vBQ-Io-y8U"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nVX-E1-oL9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NEU-2u-RKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="785.49107142857144"/>
         </scene>
     </scenes>
 </document>

@@ -16,6 +16,8 @@
 		250A70862366E05B0089568B /* AutolayoutPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A70852366E05B0089568B /* AutolayoutPracticeUITests.swift */; };
 		250A928D2366EE53008431A8 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 250A928C2366EE53008431A8 /* Assets */; };
 		250A92912366F28E008431A8 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A92902366F28E008431A8 /* CustomUIView.swift */; };
+		250A92932367342E008431A8 /* LogMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A92922367342E008431A8 /* LogMealViewController.swift */; };
+		250A929523673B31008431A8 /* LogMealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A929423673B31008431A8 /* LogMealTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		250A70872366E05B0089568B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		250A928C2366EE53008431A8 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		250A92902366F28E008431A8 /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
+		250A92922367342E008431A8 /* LogMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMealViewController.swift; sourceTree = "<group>"; };
+		250A929423673B31008431A8 /* LogMealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMealTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +108,10 @@
 				250A928C2366EE53008431A8 /* Assets */,
 				250A70672366E05A0089568B /* ViewController.swift */,
 				250A70692366E05A0089568B /* Main.storyboard */,
+				250A92922367342E008431A8 /* LogMealViewController.swift */,
 				250A70712366E05B0089568B /* Info.plist */,
 				250A92902366F28E008431A8 /* CustomUIView.swift */,
+				250A929423673B31008431A8 /* LogMealTableViewCell.swift */,
 				250A70932366E0770089568B /* Supporting Files */,
 			);
 			path = AutolayoutPractice;
@@ -273,6 +279,8 @@
 			files = (
 				250A70682366E05A0089568B /* ViewController.swift in Sources */,
 				250A92912366F28E008431A8 /* CustomUIView.swift in Sources */,
+				250A92932367342E008431A8 /* LogMealViewController.swift in Sources */,
+				250A929523673B31008431A8 /* LogMealTableViewCell.swift in Sources */,
 				250A70662366E05A0089568B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
