@@ -36,6 +36,7 @@ class CustomUIView: UIView {
             self.layer.shadowRadius = shadowRadius
         }
     }
+    //add params
     
     //border
     @IBInspectable var borderColor: UIColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 0) {
@@ -52,6 +53,7 @@ class CustomUIView: UIView {
     //TODO
     @IBInspectable var dashedBorder: Bool = false {
         didSet {
+//layer
             
         }
     }

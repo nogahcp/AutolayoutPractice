@@ -10,6 +10,9 @@ import UIKit
 
 class LogMealViewController: UIViewController {
 
+//    var dataSource: UITableViewDataSource
+//    var delegate: UITableViewDelegate = self
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
 
