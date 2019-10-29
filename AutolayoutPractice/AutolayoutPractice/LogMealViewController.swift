@@ -13,7 +13,7 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         // Register the table view cell class and its reuse id
-        self.foodTableView.register(LogMealTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        //self.foodTableView.register(LogMealTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         
         // Do any additional setup after loading the view.
         self.foodTableView.delegate = self
@@ -23,7 +23,7 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var foodTableView: UITableView!
     var foodNames: [String] = ["apple", "bread"]
-    var foodDescription: [String] = ["",""]
+    var foodDescription: [String] = ["d1","d2"]
     var foodPicture: [UIImage?] = [nil,nil]
     let cellReuseIdentifier = "cell"
 
@@ -37,10 +37,11 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         // create a new cell if needed or reuse an old one
         let cell: LogMealTableViewCell = (self.foodTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! LogMealTableViewCell?)!
 
-        
         // set the text from the data model
-        cell.textLabel?.text = self.foodNames[indexPath.row]
-        
+        cell.cellImege?.image = self.foodPicture[indexPath.row]
+        cell.cellTitle?.text = self.foodNames[indexPath.row]
+        cell.cellDescription?.text = self.foodDescription[indexPath.row]
+
         return cell
     }
 

@@ -258,10 +258,10 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="66" id="XQ3-yg-Bke">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="66" id="XQ3-yg-Bke" customClass="LogMealTableViewCell" customModule="AutolayoutPractice">
                                         <rect key="frame" x="0.0" y="28" width="378" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XQ3-yg-Bke" id="Eux-FS-bAe" customClass="LogMealTableViewCell" customModule="AutolayoutPractice" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XQ3-yg-Bke" id="Eux-FS-bAe">
                                             <rect key="frame" x="0.0" y="0.0" width="378" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -301,6 +301,11 @@
                                                 <constraint firstItem="aTS-dW-Pq8" firstAttribute="top" secondItem="Eux-FS-bAe" secondAttribute="top" constant="9" id="vTB-DY-FaE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellDescription" destination="0Wt-A2-7RL" id="leY-56-y43"/>
+                                            <outlet property="cellImege" destination="aTS-dW-Pq8" id="Jq9-HA-jSN"/>
+                                            <outlet property="cellTitle" destination="KBX-XL-234" id="GYe-Lv-Bef"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
