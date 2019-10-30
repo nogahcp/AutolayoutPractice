@@ -18,29 +18,59 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
         self.foodTableView.delegate = self
         self.foodTableView.dataSource = self
-
+        self.createFoodItems()
     }
     
     @IBOutlet weak var foodTableView: UITableView!
-    var foodNames: [String] = ["apple", "bread"]
-    var foodDescription: [String] = ["d1","d2"]
-    var foodPicture: [UIImage?] = [nil,nil]
+    var foodItems: [FoodItem] = []
     let cellReuseIdentifier = "cell"
-
+    let cellSpacingHeight: CGFloat = 10
+    
+    private func createFoodItems() {
+        var fi = FoodItem(name: "Coffee", description: "Aroma", picture: UIImage(named: "coffee"))
+        foodItems.append(fi)
+        fi = FoodItem(name: "Sweetened Coffee With Milk", description: "", picture: UIImage(named: "cappuccino"))
+        foodItems.append(fi)
+        fi = FoodItem(name: "Breakfast Blend Coffee", description: "", picture: UIImage(named: "coffee"))
+        foodItems.append(fi)
+        fi = FoodItem(name: "Iced Coffee With Milk", description: "", picture: UIImage(named: "iced coffee"))
+        foodItems.append(fi)
+        fi = FoodItem(name: "Instant Coffee", description: "", picture: UIImage(named: "instant coffee"))
+        foodItems.append(fi)
+        fi = FoodItem(name: "Decaf Coffee", description: "", picture: UIImage(named: "instant coffee"))
+        foodItems.append(fi)
+        fi = FoodItem(name: "Iced Mocha Coffee", description: "", picture: UIImage(named: "iced coffee"))
+        foodItems.append(fi)
+        fi = FoodItem(name: "Instant Powder Coffee", description: "", picture: nil)
+        foodItems.append(fi)
+        fi = FoodItem(name: "Instant Powder Coffee", description: "", picture: nil)
+        foodItems.append(fi)
+        fi = FoodItem(name: "Instant Powder Coffee", description: "", picture: nil)
+        foodItems.append(fi)
+        fi = FoodItem(name: "Instant Powder Coffee", description: "", picture: nil)
+        foodItems.append(fi)
+        fi = FoodItem(name: "Instant Powder Coffee", description: "", picture: nil)
+        foodItems.append(fi)
+        fi = FoodItem(name: "Instant Powder Coffee", description: "", picture: nil)
+        foodItems.append(fi)
+    }
+    
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.foodNames.count
+        return self.foodItems.count
     }
+    
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // create a new cell if needed or reuse an old one
         let cell: LogMealTableViewCell = (self.foodTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! LogMealTableViewCell?)!
-
-        // set the text from the data model
-        cell.cellImege?.image = self.foodPicture[indexPath.row]
-        cell.cellTitle?.text = self.foodNames[indexPath.row]
-        cell.cellDescription?.text = self.foodDescription[indexPath.row]
+        let foodItem = self.foodItems[indexPath.row]
+        
+        // set the cell details from the data model
+        cell.cellImege?.image = foodItem.picture
+        cell.cellTitle?.text = foodItem.name
+        cell.cellDescription?.text = foodItem.description
 
         return cell
     }
@@ -49,5 +79,11 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
     }
+    
+
+    // Set the spacing between sections
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return cellSpacingHeight
+//    }
 
 }
