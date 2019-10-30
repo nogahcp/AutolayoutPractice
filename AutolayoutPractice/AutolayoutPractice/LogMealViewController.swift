@@ -19,6 +19,19 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.foodTableView.delegate = self
         self.foodTableView.dataSource = self
         self.createFoodItems()
+        self.setSaveButtonView()
+    }
+
+    @IBOutlet weak var saveButton: UIButton!
+    private func setSaveButtonView() {
+        //set gradient color
+        let gradient = CAGradientLayer()
+        gradient.frame = self.saveButton.bounds
+        gradient.colors = [#colorLiteral(red: 1, green: 0.4, blue: 0.4705882353, alpha: 1).cgColor, #colorLiteral(red: 1, green: 0.6039215686, blue: 0.2274509804, alpha: 1).cgColor]
+        self.saveButton.layer.addSublayer(gradient)
+        //set rounded corner
+        self.saveButton.layer.cornerRadius = 20
+        self.saveButton.clipsToBounds = true
     }
     
     @IBOutlet weak var foodTableView: UITableView!
@@ -26,6 +39,7 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
     let cellReuseIdentifier = "cell"
     let cellSpacingHeight: CGFloat = 10
     
+    //insert food items to list
     private func createFoodItems() {
         var fi = FoodItem(name: "Coffee", description: "Aroma", picture: UIImage(named: "coffee"))
         foodItems.append(fi)
