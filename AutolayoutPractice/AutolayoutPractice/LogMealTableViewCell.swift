@@ -31,6 +31,7 @@ class LogMealTableViewCell: UITableViewCell {
     
     private func createRoundEdges() {
         self.layer.cornerRadius = 4
+        self.cellImege.layer.cornerRadius = 4
     }
     
     @IBOutlet weak var cellImege: UIImageView!

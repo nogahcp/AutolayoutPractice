@@ -30,7 +30,7 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         gradient.colors = [#colorLiteral(red: 1, green: 0.4, blue: 0.4705882353, alpha: 1).cgColor, #colorLiteral(red: 1, green: 0.6039215686, blue: 0.2274509804, alpha: 1).cgColor]
         self.saveButton.layer.addSublayer(gradient)
         //set rounded corner
-        self.saveButton.layer.cornerRadius = 20
+        self.saveButton.layer.cornerRadius = 20 //not as in design
         self.saveButton.clipsToBounds = true
     }
     
@@ -38,6 +38,8 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
     var foodItems: [FoodItem] = []
     let cellReuseIdentifier = "cell"
     let cellSpacingHeight: CGFloat = 10
+    var selectedFoodItems: [FoodItem] = []
+    @IBOutlet weak var numberOfItemsSelectedLabel: UILabel!
     
     //insert food items to list
     private func createFoodItems() {
@@ -89,15 +91,20 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
 
-    // method to run when table view cell is tapped
+    // when item selected - add/reduce from selected list
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+        let item = self.foodItems[indexPath.row]
+        //add to list
+        if !self.selectedFoodItems.contains(item) {
+            self.selectedFoodItems.append(item)
+        }
+        //remove from list (if exist in list)
+        else {
+            self.selectedFoodItems.remove(at: (self.selectedFoodItems.firstIndex(of: item))!)
+        }
+        //update label of item selected
+        self.numberOfItemsSelectedLabel.text = "\(self.selectedFoodItems.count) items selected"
     }
     
-
-    // Set the spacing between sections
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return cellSpacingHeight
-//    }
 
 }
