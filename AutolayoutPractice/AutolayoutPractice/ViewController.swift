@@ -20,11 +20,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var iconeImageView: UIImageView!
     @IBOutlet weak var carbsAbove300Label: UILabel!
     @IBOutlet weak var carbsAmountTextField: UITextField!
+    //represent last input of carbs
+    var carbsInput = 0
     @IBOutlet weak var showInsulinAmountButton: UIButton!
     
     @IBAction func carbsInputChanged(_ sender: UITextField) {
         //convert string to number
         if let carbs = Int(sender.text ?? "") {
+            self.carbsInput = carbs
             //alert if exceed 300
             if carbs > 300 {
                 self.carbsAbove300Label.isHidden = false
@@ -35,6 +38,10 @@ class ViewController: UIViewController {
         }
         else {
             self.carbsAbove300Label.isHidden = true
+            //if entered a non number input - ignore
+            sender.text = (self.carbsInput == 0 || sender.text!.isEmpty)  ? "" : String(self.carbsInput)
+            //update carbsInput
+            self.carbsInput = Int(sender.text ?? "") ?? 0
         }
     }
     
