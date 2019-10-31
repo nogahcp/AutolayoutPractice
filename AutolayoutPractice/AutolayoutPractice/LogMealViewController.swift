@@ -141,6 +141,7 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         let indexForItem = indexPath.row / 2
         let item = self.foodItems[indexForItem]
+        var added = true
         //add to list
         if !self.selectedFoodItems.contains(item) {
             self.selectedFoodItems.append(item)
@@ -148,6 +149,7 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         //remove from list (if exist in list)
         else {
             self.selectedFoodItems.remove(at: (self.selectedFoodItems.firstIndex(of: item))!)
+            added = false
         }
         //update label of item selected
         self.numberOfItemsSelectedLabel.text = "\(self.selectedFoodItems.count) items selected"
