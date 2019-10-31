@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,15 +18,29 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
         self.foodTableView.delegate = self
         self.foodTableView.dataSource = self
+        self.searchBar.delegate = self
+
         self.createFoodItems()
         self.setSaveButtonView()
         
         //Looks for single or multiple taps to remove keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.foodItems = searchText.isEmpty ? self.allFoodItemsItems : self.foodItems.filter { (item: FoodItem) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+            return item.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        
+        self.foodTableView.reloadData()
+    }
+    
+    
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -49,7 +63,8 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBOutlet weak var foodTableView: UITableView!
-    var foodItems: [FoodItem] = []
+    var allFoodItemsItems: [FoodItem] = [] //all food items
+    var foodItems: [FoodItem] = [] //food items need to display
     let cellReuseIdentifier = "cell"
     let cellSpacingHeight: CGFloat = 10
     var selectedFoodItems: [FoodItem] = []
@@ -83,6 +98,8 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         foodItems.append(fi)
         fi = FoodItem(name: "Instant Powder Coffee", description: "", picture: nil)
         foodItems.append(fi)
+        
+        self.allFoodItemsItems = foodItems.map { $0 }
     }
     
     // number of rows in table view

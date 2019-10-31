@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         self.buttonUnderlineText()
         
         //Looks for single or multiple taps to remove keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         let font = self.showInsulinAmountButton.titleLabel?.font
         // from: https://stackoverflow.com/a/31359103
         let attrs = [ NSAttributedString.Key.underlineStyle : 1,
-                      NSAttributedString.Key.font : font,
+                      NSAttributedString.Key.font : font ?? UIFont.init(),
                       NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.462745098, green: 0.4745098039, blue: 0.631372549, alpha: 1),
                       NSAttributedString.Key.underlineColor : #colorLiteral(red: 0.462745098, green: 0.4745098039, blue: 0.631372549, alpha: 1)
             ] as [NSAttributedString.Key : Any]

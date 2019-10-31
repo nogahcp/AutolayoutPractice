@@ -10,14 +10,6 @@ import UIKit
 
 class CustomUIView: UIView {
     
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
-    
     //corners radius
     @IBInspectable var cornerRadius: CGFloat = 0.0 {
         didSet {

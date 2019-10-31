@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U2k-es-t9F">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -219,7 +219,7 @@
                         <outlet property="carbsAbove300Label" destination="z3F-Gk-cmh" id="oXd-VL-WHN"/>
                         <outlet property="carbsAmountTextField" destination="gZ4-ND-rxg" id="C0j-4m-5Cl"/>
                         <outlet property="iconeImageView" destination="YhB-Or-CRi" id="kW4-VX-Nbs"/>
-                        <outlet property="showInsulinAmountButton" destination="U3O-tJ-u9D" id="JP0-gr-JXf"/>
+                        <outlet property="showInsulinAmountButton" destination="U3O-tJ-u9D" id="t1L-Gv-IGx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -480,6 +480,7 @@
                         <outlet property="foodTableView" destination="Lqg-Jf-nch" id="VGH-9o-fDx"/>
                         <outlet property="numberOfItemsSelectedLabel" destination="QeT-TO-dj5" id="jUN-PN-rNe"/>
                         <outlet property="saveButton" destination="mbc-eq-u1Q" id="wuS-ND-iND"/>
+                        <outlet property="searchBar" destination="2j6-4t-RJG" id="Ylu-Ze-9JB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEU-2u-RKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
