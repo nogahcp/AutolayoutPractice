@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240C0429236B199A00D07E67 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C0428236B199A00D07E67 /* MainScreenViewController.swift */; };
 		24E78452236982FC00750F19 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E78451236982FC00750F19 /* FoodItem.swift */; };
 		250A70662366E05A0089568B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A70652366E05A0089568B /* AppDelegate.swift */; };
 		250A70682366E05A0089568B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A70672366E05A0089568B /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		240C0428236B199A00D07E67 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		24E78451236982FC00750F19 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		250A70622366E05A0089568B /* AutolayoutPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutolayoutPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		250A70652366E05A0089568B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				250A928C2366EE53008431A8 /* Assets */,
 				250A70692366E05A0089568B /* Main.storyboard */,
+				240C0428236B199A00D07E67 /* MainScreenViewController.swift */,
 				250A92922367342E008431A8 /* LogMealViewController.swift */,
 				250A929423673B31008431A8 /* LogMealTableViewCell.swift */,
 				24E78451236982FC00750F19 /* FoodItem.swift */,
@@ -282,6 +285,7 @@
 			files = (
 				250A70682366E05A0089568B /* ViewController.swift in Sources */,
 				250A92912366F28E008431A8 /* CustomUIView.swift in Sources */,
+				240C0429236B199A00D07E67 /* MainScreenViewController.swift in Sources */,
 				250A92932367342E008431A8 /* LogMealViewController.swift in Sources */,
 				250A929523673B31008431A8 /* LogMealTableViewCell.swift in Sources */,
 				24E78452236982FC00750F19 /* FoodItem.swift in Sources */,

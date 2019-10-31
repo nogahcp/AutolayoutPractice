@@ -20,14 +20,28 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.foodTableView.dataSource = self
         self.createFoodItems()
         self.setSaveButtonView()
+        
+        //Looks for single or multiple taps to remove keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
 
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     @IBOutlet weak var saveButton: UIButton!
     private func setSaveButtonView() {
         //set gradient color
         let gradient = CAGradientLayer()
         gradient.frame = self.saveButton.bounds
         gradient.colors = [#colorLiteral(red: 1, green: 0.4, blue: 0.4705882353, alpha: 1).cgColor, #colorLiteral(red: 1, green: 0.6039215686, blue: 0.2274509804, alpha: 1).cgColor]
+        
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5);
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.5);
         self.saveButton.layer.addSublayer(gradient)
         //set rounded corner
         self.saveButton.layer.cornerRadius = 20 //not as in design
@@ -73,27 +87,43 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.foodItems.count
+        //extra cells for space between cells
+        return (self.foodItems.count*2 - 1)
+        //return self.foodItems.count
     }
     
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // create a new cell if needed or reuse an old one
-        let cell: LogMealTableViewCell = (self.foodTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! LogMealTableViewCell?)!
-        let foodItem = self.foodItems[indexPath.row]
-        
-        // set the cell details from the data model
-        cell.cellImege?.image = foodItem.picture
-        cell.cellTitle?.text = foodItem.name
-        cell.cellDescription?.text = foodItem.description
-
-        return cell
+        //if even number - "real" cell
+        if indexPath.row%2 == 0 {
+            // create a new cell if needed or reuse an old one
+            let cell: LogMealTableViewCell = (self.foodTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! LogMealTableViewCell?)!
+            let foodItem = self.foodItems[indexPath.row/2]
+            
+            // set the cell details from the data model
+            cell.cellImege?.image = foodItem.picture
+            cell.cellTitle?.text = foodItem.name
+            cell.cellDescription?.text = foodItem.description
+            return cell
+        }
+        //if not even - empty cell for space
+        else {
+            // create a "space" cell
+            let cell: UITableViewCell = self.foodTableView.dequeueReusableCell(withIdentifier: "space")!
+            return cell
+        }
+    
     }
 
     // when item selected - add/reduce from selected list
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = self.foodItems[indexPath.row]
+        //if row is not even - a space row - dont select
+        guard indexPath.row % 2 == 0 else {
+            return
+        }
+        let indexForItem = indexPath.row / 2
+        let item = self.foodItems[indexForItem]
         //add to list
         if !self.selectedFoodItems.contains(item) {
             self.selectedFoodItems.append(item)
@@ -104,6 +134,18 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         //update label of item selected
         self.numberOfItemsSelectedLabel.text = "\(self.selectedFoodItems.count) items selected"
+    }
+    
+    //return the cell hight according to index
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //if index is even - regular cell
+        if indexPath.row % 2 == 0 {
+            return 70
+        }
+        //index is not even - space cell
+        else {
+            return 6
+        }
     }
     
 

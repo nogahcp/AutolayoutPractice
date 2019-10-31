@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ywo-59-6ZW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -81,11 +81,6 @@
                                                         <rect key="frame" x="98" y="6.5" width="25" height="38.5"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="28"/>
                                                         <color key="textColor" red="0.46274509800000002" green="0.47450980390000003" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <connections>
-                                                            <action selector="carbsAmountChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="sRN-uN-4y6"/>
-                                                            <action selector="carbsInputChanged:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="ehv-vm-xVX"/>
-                                                            <action selector="carbsInputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="vct-bw-9T4"/>
-                                                        </connections>
                                                     </label>
                                                 </subviews>
                                             </stackView>
@@ -111,7 +106,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label hidden="YES" opaque="NO" contentMode="scaleToFill" text="Amount of carbs cannot exceed 300" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-Gk-cmh">
+                                    <label hidden="YES" opaque="NO" contentMode="scaleToFill" text="Amount of carbs cannot exceed 300" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-Gk-cmh">
                                         <rect key="frame" x="70.5" y="159.5" width="227" height="19.5"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                         <color key="textColor" red="0.74901960784313726" green="0.0" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -221,10 +216,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="CARB COUNT" id="Iel-uh-nrN"/>
                     <connections>
-                        <outlet property="carbsAbove300Label" destination="z3F-Gk-cmh" id="S7p-ic-6mR"/>
-                        <outlet property="carbsAmountTextField" destination="gZ4-ND-rxg" id="xAP-t9-F3v"/>
-                        <outlet property="iconeImageView" destination="YhB-Or-CRi" id="Umu-3J-KvY"/>
-                        <outlet property="showInsulinAmountButton" destination="U3O-tJ-u9D" id="3xo-wK-a0g"/>
+                        <outlet property="carbsAbove300Label" destination="z3F-Gk-cmh" id="oXd-VL-WHN"/>
+                        <outlet property="carbsAmountTextField" destination="gZ4-ND-rxg" id="C0j-4m-5Cl"/>
+                        <outlet property="iconeImageView" destination="YhB-Or-CRi" id="kW4-VX-Nbs"/>
+                        <outlet property="showInsulinAmountButton" destination="U3O-tJ-u9D" id="JP0-gr-JXf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -247,10 +242,10 @@
             </objects>
             <point key="canvasLocation" x="-2440" y="674"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Screen View Controller-->
         <scene sceneID="vIK-6b-vw2">
             <objects>
-                <viewController id="Kce-13-dwZ" sceneMemberID="viewController">
+                <viewController id="Kce-13-dwZ" customClass="MainScreenViewController" customModule="AutolayoutPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CUW-l8-Huf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -274,7 +269,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="U2k-es-t9F" kind="push" id="Zpe-yP-Lym"/>
+                                            <segue destination="U2k-es-t9F" kind="show" identifier="Log Meal" id="vXg-x4-e77"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZU-6m-XNl">
@@ -293,7 +288,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="push" id="LuG-nD-WLi"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Carb Count" id="nte-xa-Z8T"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -321,10 +316,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-4t-RJG">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-4t-RJG">
                                 <rect key="frame" x="18" y="117" width="378" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string></string>
@@ -336,7 +332,7 @@
                                     <constraint firstAttribute="width" secondItem="fXO-4F-doX" secondAttribute="height" multiplier="1:1" id="URT-6V-aiX"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lqg-Jf-nch">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lqg-Jf-nch">
                                 <rect key="frame" x="18" y="189" width="378" height="624"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -392,6 +388,16 @@
                                             <outlet property="cellImege" destination="aTS-dW-Pq8" id="Jq9-HA-jSN"/>
                                             <outlet property="cellTitle" destination="KBX-XL-234" id="GYe-Lv-Bef"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="6" reuseIdentifier="space" rowHeight="6" id="hc3-3n-CAa">
+                                        <rect key="frame" x="0.0" y="98" width="378" height="6"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hc3-3n-CAa" id="jGN-C7-c0R">
+                                            <rect key="frame" x="0.0" y="0.0" width="378" height="5.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
