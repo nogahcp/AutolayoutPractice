@@ -14,8 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.iconeImageView.image = UIImage(named: "reservoir")
-        self.buttonUnderlineText()
-        
+        self.carbsAbove300Label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         //Looks for single or multiple taps to remove keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -31,6 +30,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var iconeImageView: UIImageView!
     @IBOutlet weak var carbsAbove300Label: UILabel!
     @IBOutlet weak var carbsAmountTextField: UITextField!
+    @IBOutlet weak var dashedLine: CustomUIView!
     //represent last input of carbs
     var carbsInput = 0
     @IBOutlet weak var showInsulinAmountButton: UIButton!
@@ -41,14 +41,14 @@ class ViewController: UIViewController {
             self.carbsInput = carbs
             //alert if exceed 300
             if carbs > 300 {
-                self.carbsAbove300Label.isHidden = false
+                self.carbsAbove300Label.textColor = #colorLiteral(red: 0.7490196078, green: 0, blue: 0.08235294118, alpha: 1)
             }
             else {
-                self.carbsAbove300Label.isHidden = true
+                self.carbsAbove300Label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
             }
         }
         else {
-            self.carbsAbove300Label.isHidden = true
+            self.carbsAbove300Label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
             //if entered a non number input - ignore
             sender.text = (self.carbsInput == 0 || sender.text!.isEmpty)  ? "" : String(self.carbsInput)
             //update carbsInput
@@ -71,7 +71,24 @@ class ViewController: UIViewController {
         
     }
 
-    
+//    //order 3 buttom objects proportionaly
+//    private func buttomPartConstraints() {
+//        //warning constraint
+//        let buttonSectionHeight = self.buttomItemsView.frame.size.height
+//        var prop = 14/buttonSectionHeight
+//        let constraint1 = NSLayoutConstraint(item: self.buttomItemsView, attribute: .top, relatedBy: .equal, toItem: self.carbsAbove300Label, attribute: .top, multiplier: 1, constant: prop)
+//        self.carbsAbove300Label.addConstraint(constraint1)
+//
+//        //dash line constraint
+//        prop = 12/buttonSectionHeight
+//        let constraint2 = NSLayoutConstraint(item: self.carbsAbove300Label, attribute: .bottom, relatedBy: .equal, toItem: self.dashedLine, attribute: .top, multiplier: 1, constant: prop)
+//        self.dashedLine.addConstraint(constraint2)
+//
+//        //dash line constraint
+//        prop = 18/buttonSectionHeight
+//        let constraint3 = NSLayoutConstraint(item: self.dashedLine, attribute: .bottom, relatedBy: .equal, toItem: self.showInsulinAmountButton, attribute: .top, multiplier: 1, constant: prop)
+//        self.showInsulinAmountButton.addConstraint(constraint3)
+//    }
     
 }
 

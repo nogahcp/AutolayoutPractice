@@ -33,27 +33,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJA-Fk-79E" customClass="CustomUIView" customModule="AutolayoutPractice" customModuleProvider="target">
                                 <rect key="frame" x="23" y="133" width="368" height="284.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMo-tu-aU5">
-                                        <rect key="frame" x="0.0" y="193" width="368" height="91.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3O-tJ-u9D">
-                                                <rect key="frame" x="108.5" y="34.5" width="151" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="151" id="eDk-15-Jat"/>
-                                                    <constraint firstAttribute="height" constant="22" id="qe9-V5-Ff5"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
-                                                <state key="normal" title="Show insulin amount">
-                                                    <color key="titleColor" red="0.46274509803921571" green="0.47450980392156861" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YhB-Or-CRi">
+                                        <rect key="frame" x="153" y="-31" width="62" height="62"/>
                                         <constraints>
-                                            <constraint firstItem="U3O-tJ-u9D" firstAttribute="centerY" secondItem="QMo-tu-aU5" secondAttribute="centerY" id="MJS-im-9M0"/>
-                                            <constraint firstItem="U3O-tJ-u9D" firstAttribute="centerX" secondItem="QMo-tu-aU5" secondAttribute="centerX" id="gnR-cU-VFV"/>
+                                            <constraint firstAttribute="height" constant="62" id="Dcs-Vd-y5P"/>
+                                            <constraint firstAttribute="width" constant="62" id="kQS-mh-Dnj"/>
                                         </constraints>
-                                    </view>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter amount of carbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0I-uA-IMp">
                                         <rect key="frame" x="71.5" y="49" width="225" height="30.5"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
@@ -105,53 +91,60 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label hidden="YES" opaque="NO" contentMode="scaleToFill" text="Amount of carbs cannot exceed 300" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-Gk-cmh">
-                                        <rect key="frame" x="70.5" y="159.5" width="227" height="19.5"/>
-                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
-                                        <color key="textColor" red="0.74901960784313726" green="0.0" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZs-LE-8cE" customClass="CustomUIView" customModule="AutolayoutPractice" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="192" width="320" height="1"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="9OI-wO-E7U"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.90980392156862744" green="0.90196078431372551" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="dashedBorder" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YhB-Or-CRi">
-                                        <rect key="frame" x="153" y="-31" width="62" height="62"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="62" id="Dcs-Vd-y5P"/>
-                                            <constraint firstAttribute="width" constant="62" id="kQS-mh-Dnj"/>
-                                        </constraints>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JAX-4t-G2z">
+                                        <rect key="frame" x="0.0" y="146.5" width="368" height="138"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xfT-hw-MSp">
+                                                <rect key="frame" x="24" y="0.0" width="320" height="65"/>
+                                                <subviews>
+                                                    <label opaque="NO" contentMode="scaleToFill" text="Amount of carbs cannot exceed 300" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-Gk-cmh">
+                                                        <rect key="frame" x="46.5" y="0.0" width="227" height="56"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                                                        <color key="textColor" red="0.74901960784313726" green="0.0" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZs-LE-8cE" customClass="CustomUIView" customModule="AutolayoutPractice" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="64" width="320" height="1"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="eDk-ea-VBB"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.90980392156862744" green="0.90196078431372551" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="dashedBorder" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3O-tJ-u9D">
+                                                <rect key="frame" x="109" y="73" width="150" height="65"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                                                <state key="normal" title="Show insulin amount">
+                                                    <color key="titleColor" red="0.46274509803921571" green="0.47450980392156861" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="z3F-Gk-cmh" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="AuB-fL-dyd"/>
+                                    <constraint firstItem="jZs-LE-8cE" firstAttribute="width" secondItem="rJA-Fk-79E" secondAttribute="width" multiplier="287/330" id="1sK-aQ-WIv"/>
+                                    <constraint firstAttribute="trailing" secondItem="JAX-4t-G2z" secondAttribute="trailing" id="4BT-VH-gDd"/>
                                     <constraint firstItem="s0I-uA-IMp" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="Beq-S2-tJB"/>
                                     <constraint firstAttribute="width" secondItem="rJA-Fk-79E" secondAttribute="height" multiplier="22:17" id="Mfj-d1-Du7"/>
+                                    <constraint firstItem="JAX-4t-G2z" firstAttribute="top" secondItem="me0-mK-idP" secondAttribute="bottom" id="PUR-YP-PK7"/>
                                     <constraint firstItem="YhB-Or-CRi" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="PcL-rZ-Fhl"/>
-                                    <constraint firstItem="jZs-LE-8cE" firstAttribute="top" secondItem="z3F-Gk-cmh" secondAttribute="bottom" constant="13" id="VQS-m4-BrO"/>
-                                    <constraint firstAttribute="bottom" secondItem="QMo-tu-aU5" secondAttribute="bottom" id="Zse-3F-5ml"/>
+                                    <constraint firstItem="JAX-4t-G2z" firstAttribute="leading" secondItem="rJA-Fk-79E" secondAttribute="leading" id="R7Y-K5-XCP"/>
                                     <constraint firstItem="me0-mK-idP" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="a8Z-hT-3F2"/>
                                     <constraint firstItem="s0I-uA-IMp" firstAttribute="top" secondItem="rJA-Fk-79E" secondAttribute="top" constant="49" id="bpV-FL-3Cz"/>
-                                    <constraint firstAttribute="trailing" secondItem="QMo-tu-aU5" secondAttribute="trailing" id="d0a-0A-shW"/>
-                                    <constraint firstItem="z3F-Gk-cmh" firstAttribute="top" secondItem="me0-mK-idP" secondAttribute="bottom" constant="13" id="dPa-0J-ayY"/>
                                     <constraint firstAttribute="top" secondItem="YhB-Or-CRi" secondAttribute="bottom" constant="-31" id="de4-C6-Nxy"/>
-                                    <constraint firstItem="jZs-LE-8cE" firstAttribute="leading" secondItem="rJA-Fk-79E" secondAttribute="leading" constant="24" id="kN6-PT-PDb"/>
-                                    <constraint firstItem="jZs-LE-8cE" firstAttribute="top" secondItem="rJA-Fk-79E" secondAttribute="top" constant="192" id="kvt-kv-6rD"/>
-                                    <constraint firstItem="QMo-tu-aU5" firstAttribute="leading" secondItem="rJA-Fk-79E" secondAttribute="leading" id="uau-gJ-ptV"/>
-                                    <constraint firstItem="jZs-LE-8cE" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="w4Y-Gu-9lO"/>
-                                    <constraint firstItem="jZs-LE-8cE" firstAttribute="bottom" secondItem="QMo-tu-aU5" secondAttribute="top" id="xiv-TG-Bux"/>
+                                    <constraint firstItem="0n2-2L-QGN" firstAttribute="top" secondItem="s0I-uA-IMp" secondAttribute="bottom" constant="16" id="fm2-Qj-nWk"/>
+                                    <constraint firstAttribute="bottom" secondItem="JAX-4t-G2z" secondAttribute="bottom" id="hWW-dA-7g5"/>
+                                    <constraint firstItem="jZs-LE-8cE" firstAttribute="centerX" secondItem="rJA-Fk-79E" secondAttribute="centerX" id="uc7-h9-AUg"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -217,6 +210,7 @@
                     <connections>
                         <outlet property="carbsAbove300Label" destination="z3F-Gk-cmh" id="oXd-VL-WHN"/>
                         <outlet property="carbsAmountTextField" destination="gZ4-ND-rxg" id="C0j-4m-5Cl"/>
+                        <outlet property="dashedLine" destination="jZs-LE-8cE" id="cE7-kp-KFk"/>
                         <outlet property="iconeImageView" destination="YhB-Or-CRi" id="MT5-On-n9h"/>
                         <outlet property="showInsulinAmountButton" destination="U3O-tJ-u9D" id="t1L-Gv-IGx"/>
                     </connections>
@@ -315,11 +309,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-4t-RJG">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-4t-RJG">
                                 <rect key="frame" x="18" y="117" width="378" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.96862745098039216" green="0.96470588235294119" blue="0.97647058823529409" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string></string>
@@ -413,11 +407,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-eq-u1Q">
-                                        <rect key="frame" x="254" y="7" width="115" height="38"/>
+                                        <rect key="frame" x="255.5" y="7" width="113.5" height="38"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="115" id="8Ij-nV-t7E"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="14"/>
                                         <state key="normal" title="SAVE">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -429,6 +420,7 @@
                                 <constraints>
                                     <constraint firstItem="QeT-TO-dj5" firstAttribute="leading" secondItem="he1-yS-FAd" secondAttribute="leading" constant="24" id="SjU-bs-Vqg"/>
                                     <constraint firstAttribute="height" constant="52" id="Wrk-cd-dKX"/>
+                                    <constraint firstItem="mbc-eq-u1Q" firstAttribute="width" secondItem="he1-yS-FAd" secondAttribute="width" multiplier="0.3" id="YPR-MJ-qcf"/>
                                     <constraint firstItem="mbc-eq-u1Q" firstAttribute="centerY" secondItem="he1-yS-FAd" secondAttribute="centerY" id="cJt-j7-AHt"/>
                                     <constraint firstItem="QeT-TO-dj5" firstAttribute="centerY" secondItem="he1-yS-FAd" secondAttribute="centerY" id="e5I-TL-Shc"/>
                                     <constraint firstAttribute="trailing" secondItem="mbc-eq-u1Q" secondAttribute="trailing" constant="9" id="gYd-6J-npl"/>

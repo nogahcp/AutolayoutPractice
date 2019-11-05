@@ -12,21 +12,21 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Register the table view cell class and its reuse id
-        //self.foodTableView.register(LogMealTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        
         // Do any additional setup after loading the view.
         self.foodTableView.delegate = self
         self.foodTableView.dataSource = self
         self.searchBar.delegate = self
 
+        //update views
         self.createFoodItems()
         self.setSaveButtonView()
+        self.setSearchBarView()
         
         //Looks for single or multiple taps to remove keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        
     }
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -86,7 +86,7 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         foodItems.append(fi)
         fi = FoodItem(name: "Iced Mocha Coffee", description: "", picture: UIImage(named: "iced coffee"))
         foodItems.append(fi)
-        fi = FoodItem(name: "Instant Powder Coffee", description: "", picture: nil)
+        fi = FoodItem(name: "Instant Powder Coffee", description: "", picture: UIImage(named: "instant powder coffee"))
         foodItems.append(fi)
         fi = FoodItem(name: "Instant Powder Coffee", description: "", picture: nil)
         foodItems.append(fi)
@@ -100,6 +100,18 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         foodItems.append(fi)
         
         self.allFoodItemsItems = foodItems.map { $0 }
+    }
+    
+    //change background to transparant
+    private func setSearchBarView() {
+        let searchTextField = self.searchBar.value(forKey: "searchField") as? UITextField
+//        searchTextField?.textColor = UIColor.black
+        searchTextField?.backgroundColor = UIColor.clear
+        searchTextField?.attributedText =  NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black.withAlphaComponent(1)])
+        //search image
+        searchBar.setImage(UIImage(named: "icon_search"), for: UISearchBar.Icon.search, state: .normal)
+        //clear image
+        searchBar.setImage(UIImage(named: "icon_search_clear"), for: UISearchBar.Icon.clear, state: .normal)
     }
     
     // number of rows in table view
@@ -141,7 +153,6 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         let indexForItem = indexPath.row / 2
         let item = self.foodItems[indexForItem]
-        var added = true
         //add to list
         if !self.selectedFoodItems.contains(item) {
             self.selectedFoodItems.append(item)
@@ -149,7 +160,6 @@ class LogMealViewController: UIViewController, UITableViewDelegate, UITableViewD
         //remove from list (if exist in list)
         else {
             self.selectedFoodItems.remove(at: (self.selectedFoodItems.firstIndex(of: item))!)
-            added = false
         }
         //update label of item selected
         self.numberOfItemsSelectedLabel.text = "\(self.selectedFoodItems.count) items selected"
